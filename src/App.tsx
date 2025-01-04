@@ -21,7 +21,7 @@ function App() {
 
                 <div>
                     <a href="https://open.spotify.com/artist/65Kq02oh0g3gRqfZ0fo8eG?nd=1&dlsi=b496799f29ff4521">RELEASES</a>
-                    <a >SHOWS</a>
+                    <a ><s>SHOWS</s></a>
                     <a href="mailto:tiff@24-8.com">CONTACT</a>
                 </div>
             </div>
