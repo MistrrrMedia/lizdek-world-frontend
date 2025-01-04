@@ -3,12 +3,8 @@ import './App.css'
 function App() {
     return (
         <>
-            <video
-                src="/background-loop.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
+            <img
+                src="/background-loop.gif"
                 className="background_loop"
             />
 
