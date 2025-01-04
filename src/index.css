@@ -1,0 +1,31 @@
+@import url("https://use.typekit.net/nmx7lts.css");
+
+:root {
+  font-family: "proxima-nova", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #000000ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+    color: #ffffffff;
+    text-decoration: none;
+    padding: 20px;
+    letter-spacing: 4px;
+    font-size: 20px;
+    filter: drop-shadow(0 0px 20px #880000FF);
+}
+
+a:hover {
+    color: #FF4444FF;
+}

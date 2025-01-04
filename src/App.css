@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.lizdek-gif {
+    width: 50%;
+    filter: drop-shadow(0 4px 20px #880000FF);
+}
+
+.background-loop {
+    min-width: 100%;
+    min-height: 100%;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: -1;
+    filter: brightness(0.3) blur(1px);
+}
