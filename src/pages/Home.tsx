@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Home() {
     const navigate = useNavigate();
-    
+
     return (
         <>
             <img
@@ -20,7 +20,7 @@ function Home() {
 
                 <div>
                     <a href="https://open.spotify.com/artist/65Kq02oh0g3gRqfZ0fo8eG?nd=1&dlsi=b496799f29ff4521">RELEASES</a>
-                    <a onClick={() => navigate('/shows')}><s>SHOWS</s></a>
+                    <a onClick={() => navigate('/shows')}>SHOWS</a>
                     <a href="mailto:tiff@24-8.com">CONTACT</a>
                 </div>
             </div>
