@@ -71,9 +71,9 @@ const Releases: React.FC = () => {
                                         }).toUpperCase()}
                                     </p>
                                 </div>
-                                <Link to={`/release/${release.url_title}`} className="view-release">
+                                <a href={release.soundcloud_url} target="_blank" rel="noopener noreferrer" className="view-release">
                                     →
-                                </Link>
+                                </a>
                             </div>
                         ))}
                     </div>
