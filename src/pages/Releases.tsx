@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useReleases } from '../hooks/useReleases';
 import { getAlbumArtURL } from '../services/artworkRetriever';
 import '../styles/Releases.css';
