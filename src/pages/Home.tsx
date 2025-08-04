@@ -1,14 +1,18 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useUpcomingShows } from '../hooks/useShows';
 import '../styles/Home.css';
-import { useNavigate } from 'react-router-dom';
 
-function Home() {
-    const navigate = useNavigate();
+const Home: React.FC = () => {
+    const { data: upcomingShowsData } = useUpcomingShows();
+    const hasUpcomingShows = upcomingShowsData?.hasUpcomingShows || false;
 
     return (
         <>
             <img
                 src="/background-loop.gif"
                 className="background_loop"
+                alt="Background"
             />
 
             <div className="content_container">
@@ -18,9 +22,13 @@ function Home() {
                     className="lizdek_gif"
                 />
 
-                <div>
-                    <a href="https://open.spotify.com/artist/65Kq02oh0g3gRqfZ0fo8eG?nd=1&dlsi=b496799f29ff4521">RELEASES</a>
-                    <a><s>SHOWS</s></a>
+                <div className="navigation-links">
+                    <Link to="/releases">RELEASES</Link>
+                    {hasUpcomingShows ? (
+                        <Link to="/shows">SHOWS</Link>
+                    ) : (
+                        <span className="crossed-out">SHOWS</span>
+                    )}
                     <a href="mailto:tiff@24-8.com">CONTACT</a>
                 </div>
             </div>
@@ -40,6 +48,6 @@ function Home() {
             </div>
         </>
     );
-}
+};
 
 export default Home;

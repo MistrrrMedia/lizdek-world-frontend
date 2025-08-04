@@ -1,0 +1,126 @@
+.releases-page {
+    padding: 2rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.background_loop {
+    min-width: 100%;
+    min-height: 100%;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: -1;
+    filter: brightness(0.2) contrast(1.3);
+}
+
+.releases-background {
+    filter: brightness(0.2) blur(50px) contrast(1.3);
+}
+
+.releases-page h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: white;
+    filter: drop-shadow(0 4px 20px #880000FF);
+}
+
+.releases-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.release-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    filter: drop-shadow(0 4px 20px #88000040);
+}
+
+.release-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .85);
+    z-index: 1;
+}
+
+.release-info {
+    flex: 1;
+    text-align: left;
+    padding: 1.5rem;
+    position: relative;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.9));
+    z-index: 2;
+}
+
+.release-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.collaborators {
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.release-date {
+    color: #cccccc;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.view-release {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.no-releases {
+    text-align: center;
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .releases-page {
+        padding: 1rem;
+    }
+    
+    .releases-page h1 {
+        font-size: 2rem;
+    }
+    
+    .releases-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .release-card {
+        padding: 1rem;
+    }
+} 
