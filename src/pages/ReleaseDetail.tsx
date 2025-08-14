@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useReleaseDetail } from '../hooks/useReleaseDetail';
-import PlatformLink from '../components/releases/PlatformLink';
 import { getAlbumArtURL } from '../services/artworkRetriever';
 import '../styles/ReleaseDetail.css';
 
