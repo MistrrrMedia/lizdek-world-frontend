@@ -15,7 +15,7 @@ export interface Release {
 export interface ReleaseLink {
     id: number;
     release_id: number;
-    platform: 'spotify' | 'soundcloud' | 'apple_music' | 'youtube';
+    platform: 'spotify' | 'soundcloud' | 'apple_music' | 'youtube' | 'free_download';
     url: string;
     created_at: string;
 }
@@ -27,4 +27,8 @@ export interface CreateReleaseData {
     collaborators?: string;
     release_date: string;
     links?: Omit<ReleaseLink, 'id' | 'release_id' | 'created_at'>[];
+}
+
+export interface ReleaseDetail extends Release {
+    links: ReleaseLink[];
 } 

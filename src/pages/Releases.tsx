@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useReleases } from '../hooks/useReleases';
 import { getAlbumArtURL } from '../services/artworkRetriever';
 import '../styles/Releases.css';
@@ -70,9 +71,14 @@ const Releases: React.FC = () => {
                                         }).toUpperCase()}
                                     </p>
                                 </div>
-                                <a href={release.soundcloud_url} target="_blank" rel="noopener noreferrer" className="view-release">
-                                    →
-                                </a>
+                                <div className="release-actions">
+                                    <Link to={`/admin/edit/${release.url_title}`} className="edit-release">
+                                        ✎
+                                    </Link>
+                                    <Link to={`/releases/${release.url_title}`} className="view-release">
+                                        →
+                                    </Link>
+                                </div>
                             </div>
                         ))}
                     </div>

@@ -24,7 +24,7 @@ api.interceptors.response.use(
     (error) => {
         if (error.response?.status === 401) {
             sessionStorage.removeItem('auth_token');
-            window.location.href = '/admin/login';
+            // Don't redirect on 401 errors - let components handle it
         }
         return Promise.reject(error);
     }

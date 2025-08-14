@@ -1,5 +1,5 @@
 .releases-page {
-    padding: 2rem;
+    padding: 0;
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
@@ -26,7 +26,8 @@
 
 .releases-page h1 {
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 30vh;
     text-align: center;
     color: white;
     filter: drop-shadow(0 4px 20px #880000FF);
@@ -35,7 +36,7 @@
 .releases-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
     max-width: 800px;
 }
@@ -44,9 +45,21 @@
     display: flex;
     align-items: center;
     width: 100%;
+    height: 200px;
     position: relative;
     overflow: hidden;
     filter: drop-shadow(0 4px 20px #88000040);
+}
+
+.release-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .85);
+    z-index: 1;
 }
 
 .release-card::before {
@@ -89,14 +102,33 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
+.release-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.edit-release {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: color 0.3s ease;
+}
+
+.edit-release:hover {
+    color: #FF4444FF;
+}
+
 .view-release {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: color 0.3s ease;
 }
 
 .no-releases {

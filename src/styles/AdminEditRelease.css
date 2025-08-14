@@ -1,0 +1,201 @@
+.admin-edit-release-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: white;
+    padding: 2rem;
+}
+
+.admin-edit-release-content {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.admin-edit-release-form-container {
+    padding: 2rem;
+}
+
+.admin-edit-release-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.required-fields-note {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.admin-edit-release-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.admin-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 12px 16px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.admin-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.admin-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.admin-edit-release-button {
+    background: white;
+    border: none;
+    padding: 12px 24px;
+    color: #FF4444FF;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.admin-edit-release-button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.admin-edit-release-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.admin-error {
+    background: rgba(255, 68, 68, 0.2);
+    border: none;
+    padding: 12px;
+    color: #ff4444;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.link-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.platform-select {
+    flex: 0 0 120px;
+    min-width: 120px;
+    max-width: 120px;
+}
+
+.platform-select option {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-url {
+    flex: 1;
+}
+
+.remove-link-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.remove-link-button:hover {
+    color: #FF4444FF;
+}
+
+.add-link-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.add-link-button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.add-link-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.admin-edit-release-footer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.back-to-admin-releases {
+    background: none;
+    border: none;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.back-to-admin-releases:hover {
+    color: #FF4444FF;
+}
+
+.loading-state {
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

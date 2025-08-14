@@ -18,11 +18,12 @@ const Shows: React.FC = () => {
         <>
             <img
                 src="/background-loop.gif"
-                className="background_loop"
+                className="background_loop shows-background"
                 alt="Background"
             />
 
             <div className="shows-page">
+                <h1>SHOWS</h1>
                 <div className="shows-list">
                     {shows && shows.length > 0 ? (
                         shows.map((show) => (

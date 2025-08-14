@@ -46,6 +46,8 @@ const Home: React.FC = () => {
                     <img src="/twitter.svg" alt="twitter" className="social_icon" />
                 </a>
             </div>
+
+
         </>
     );
 };

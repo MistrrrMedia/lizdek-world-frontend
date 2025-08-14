@@ -31,12 +31,12 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/shows" element={<Shows />} />
                         <Route path="/releases" element={<Releases />} />
-                        <Route path="/release/:urlTitle" element={<ReleaseDetail />} />
+                        <Route path="/releases/:urlTitle" element={<ReleaseDetail />} />
                         
                         {/* Admin Routes */}
                         <Route path="/admin/login" element={<AdminLogin />} />
                         <Route 
-                            path="/admin/dashboard" 
+                            path="/admin" 
                             element={
                                 <ProtectedRoute>
                                     <AdminDashboard />
@@ -52,7 +52,7 @@ function App() {
                             } 
                         />
                         <Route 
-                            path="/admin/release/:id/edit" 
+                            path="/admin/edit/:urlTitle" 
                             element={
                                 <ProtectedRoute>
                                     <EditRelease />

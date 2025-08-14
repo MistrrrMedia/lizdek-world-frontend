@@ -1,0 +1,22 @@
+.platform-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+}
+
+.platform-name {
+    color: white;
+}
+
+.platform-action {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 4px 12px;
+}
+
+.platform-action:hover {
+    background: rgba(255, 255, 255, 0.1);
+} 
