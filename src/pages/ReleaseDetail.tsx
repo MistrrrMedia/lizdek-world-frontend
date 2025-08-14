@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useReleaseDetail } from '../hooks/useReleaseDetail';
+import { useAuth } from '../context/AuthContext';
 import { getAlbumArtURL } from '../services/artworkRetriever';
 import '../styles/ReleaseDetail.css';
 
 const ReleaseDetail: React.FC = () => {
     const { urlTitle } = useParams();
     const { data: release, isLoading, error } = useReleaseDetail(urlTitle);
+    const { user } = useAuth();
     const [artworkUrl, setArtworkUrl] = useState<string>('');
 
     // Fetch artwork for background
@@ -55,9 +57,11 @@ const ReleaseDetail: React.FC = () => {
                     <Link to="/releases" className="back-link">
                         ← RELEASES
                     </Link>
-                    <Link to={`/admin/edit/${release.url_title}`} className="edit-link">
-                        ✎
-                    </Link>
+                    {user && (
+                        <Link to={`/admin/edit/${release.url_title}`} className="edit-link">
+                            ✎
+                        </Link>
+                    )}
                 </div>
             
             <h1 className="release-title">

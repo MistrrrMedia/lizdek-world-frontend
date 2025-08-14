@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useReleases } from '../hooks/useReleases';
+import { useAuth } from '../context/AuthContext';
 import { getAlbumArtURL } from '../services/artworkRetriever';
 import '../styles/Releases.css';
 
 const Releases: React.FC = () => {
     const { data: releases, isLoading, error } = useReleases();
+    const { user } = useAuth();
     const [artworkUrls, setArtworkUrls] = useState<Record<number, string>>({});
 
     // Fetch artwork for each release
@@ -72,9 +74,11 @@ const Releases: React.FC = () => {
                                     </p>
                                 </div>
                                 <div className="release-actions">
-                                    <Link to={`/admin/edit/${release.url_title}`} className="edit-release">
-                                        ✎
-                                    </Link>
+                                    {user && (
+                                        <Link to={`/admin/edit/${release.url_title}`} className="edit-release">
+                                            ✎
+                                        </Link>
+                                    )}
                                     <Link to={`/releases/${release.url_title}`} className="view-release">
                                         →
                                     </Link>
