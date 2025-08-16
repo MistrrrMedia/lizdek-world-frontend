@@ -12,7 +12,8 @@ const AdminDashboard: React.FC = () => {
             <nav>
                 <Link to="/admin/create">CREATE RELEASE</Link>
                 <Link to="/releases">VIEW RELEASES</Link>
-                <Link to="/shows">MANAGE SHOWS</Link>
+                <Link to="/admin/create/show">CREATE SHOW</Link>
+                <Link to="/shows">VIEW SHOWS</Link>
             </nav>
             <button onClick={logout}>Logout</button>
         </div>

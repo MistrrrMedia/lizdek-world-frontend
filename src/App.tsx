@@ -10,6 +10,8 @@ import AdminLogin from './pages/admin/Login';
 import AdminDashboard from './pages/admin/Dashboard';
 import CreateRelease from './pages/admin/CreateRelease';
 import EditRelease from './pages/admin/EditRelease';
+import CreateShow from './pages/admin/CreateShow';
+import EditShow from './pages/admin/EditShow';
 import ProtectedRoute from './components/admin/ProtectedRoute';
 
 const queryClient = new QueryClient({
@@ -56,6 +58,22 @@ function App() {
                             element={
                                 <ProtectedRoute>
                                     <EditRelease />
+                                </ProtectedRoute>
+                            } 
+                        />
+                        <Route 
+                            path="/admin/create/show" 
+                            element={
+                                <ProtectedRoute>
+                                    <CreateShow />
+                                </ProtectedRoute>
+                            } 
+                        />
+                        <Route 
+                            path="/admin/edit/show/:id" 
+                            element={
+                                <ProtectedRoute>
+                                    <EditShow />
                                 </ProtectedRoute>
                             } 
                         />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useReleases } from '../hooks/useReleases';
 import { useAuth } from '../context/AuthContext';
@@ -9,11 +9,20 @@ const Releases: React.FC = () => {
     const { data: releases, isLoading, error } = useReleases();
     const { user } = useAuth();
     const [artworkUrls, setArtworkUrls] = useState<Record<number, string>>({});
+    const [displayCount, setDisplayCount] = useState(5);
+
+    const sortedReleases = useMemo(() => {
+        if (!releases) return [];
+        return [...releases].sort((a, b) => new Date(b.release_date).getTime() - new Date(a.release_date).getTime());
+    }, [releases]);
+
+    const displayedReleases = sortedReleases.slice(0, displayCount);
+    const hasMoreReleases = sortedReleases.length > displayCount;
 
     // Fetch artwork for each release
     useEffect(() => {
-        if (releases) {
-            releases.forEach(async (release) => {
+        if (displayedReleases) {
+            displayedReleases.forEach(async (release) => {
                 if (!artworkUrls[release.id] && release.soundcloud_url) {
                     try {
                         const artworkUrl = await getAlbumArtURL(release.soundcloud_url);
@@ -27,7 +36,7 @@ const Releases: React.FC = () => {
                 }
             });
         }
-    }, [releases, artworkUrls]);
+    }, [displayedReleases, artworkUrls]);
 
     if (isLoading) {
         return <div>Loading releases...</div>;
@@ -48,9 +57,9 @@ const Releases: React.FC = () => {
             <div className="releases-page">
                 <h1>RELEASES</h1>
                 
-                {releases && releases.length > 0 ? (
+                {displayedReleases.length > 0 ? (
                     <div className="releases-list">
-                        {releases.map((release) => (
+                        {displayedReleases.map((release) => (
                             <div 
                                 key={release.id} 
                                 className="release-card"
@@ -89,6 +98,17 @@ const Releases: React.FC = () => {
                 ) : (
                     <div className="no-releases">
                         <p>No releases available.</p>
+                    </div>
+                )}
+                
+                {hasMoreReleases && (
+                    <div className="load-more-container">
+                        <button 
+                            onClick={() => setDisplayCount(prev => Math.min(prev + 5, sortedReleases.length))}
+                            className="load-more-button"
+                        >
+                            LOAD MORE
+                        </button>
                     </div>
                 )}
             </div>

@@ -6,16 +6,17 @@ A React-based web application for Lizdek, featuring a public-facing website with
 
 ### Public Features
 - **Home Page**: Artist introduction with navigation to releases and shows
-- **Shows Page**: Display of upcoming live performances with ticket links
-- **Releases Page**: Music releases with cover art and streaming links
-- **Release Details**: Individual release pages with full information
+- **Shows Page**: Display of upcoming live performances with ticket links and load more functionality
+- **Releases Page**: Music releases with cover art, streaming links, and load more functionality
+- **Release Details**: Individual release pages with full information and streaming links
 - **Social Media Integration**: Direct links to artist social platforms
 
 ### Administrative Features
 - **Secure Login**: Admin authentication with session management
-- **Dashboard**: Centralized admin interface
-- **Release Management**: Create, edit, and manage music releases
-- **Show Management**: Add and update live performance information
+- **Dashboard**: Centralized admin interface with release and show management
+- **Release Management**: Create, edit, and manage music releases with duplicate link prevention
+- **Show Management**: Create, edit, and manage live performance information
+- **Authentication-based UI**: Edit buttons only visible to logged-in users
 
 ## Technology Stack
 

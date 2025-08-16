@@ -15,6 +15,7 @@
 
 .release-detail-background {
     filter: brightness(0.3) blur(50px) contrast(1.2);
+    transform: scale(1.1);
 }
 
 .release-detail-header {
@@ -93,7 +94,7 @@
 }
 
 .streaming-icon {
-    max-width: 40px;
+    max-width: 36px;
     height: auto;
     filter: invert();
 }
